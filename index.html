@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Year Question Papers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+      
+        .container {
+            background: rgb(87 230 187 / 20%);
+            border-radius: 20px;
+            padding: 20px;
+            width: 90%;
+            height: 90%;            
+            max-width: 510px;
+            max-height: 510px;
+            margin: 20px;
+            color: white;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+
+        /* Professional font colors */
+        body {
+            color: #333;
+        }
+
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-800 to-gray-600 text-white min-h-screen">
+
+    <div class="container mx-auto p-8">
+
+        <h1 class="text-3xl font-bold mb-8">Previous Year Question Papers</h1>
+
+        <!-- Year Folders -->
+        <div class="accordion" id="yearAccordion">
+
+            <!-- 2023 -->
+            <div class="card mb-2">
+                <div class="card-header" id="heading2023">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link text-indigo-500" type="button" data-toggle="collapse" data-target="#collapse2023" aria-expanded="true" aria-controls="collapse2023">
+                            2023 <i class="fas fa-angle-down"></i>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapse2023" class="collapse show" aria-labelledby="heading2023" data-parent="#yearAccordion">
+                    <div class="card-body">
+
+                        <!-- Search bar for 2023 -->
+                        <div class="mb-2">
+                            <input type="text" class="form-control" placeholder="Search subjects..." oninput="filterSubjects('2023', this.value)">
+                        </div>
+
+                        <!-- Subject Wise Papers for 2023 -->
+                        <ul id="subjects2023" class="list-group">
+                            <li class="list-group-item"><a href="#" class="text-indigo-500">Mathematics</a></li>
+                            <li class="list-group-item"><a href="#" class="text-indigo-500">Physics</a></li>
+                            <!-- Add more subjects as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="card mb-2">
+                <div class="card-header" id="heading2022">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link text-indigo-500" type="button" data-toggle="collapse" data-target="#collapse2022" aria-expanded="false" aria-controls="collapse2022">
+                            2022 <i class="fas fa-angle-down"></i>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapse2022" class="collapse" aria-labelledby="heading2022" data-parent="#yearAccordion">
+                    <div class="card-body">
+
+                        <!-- Search bar for 2022 -->
+                        <div class="mb-2">
+                            <input type="text" class="form-control" placeholder="Search subjects..." oninput="filterSubjects('2022', this.value)">
+                        </div>
+
+                        <!-- Subject Wise Papers for 2022 -->
+                        <ul id="subjects2022" class="list-group">
+                            <li class="list-group-item"><a href="#" class="text-indigo-500">Mathematics</a></li>
+                            <li class="list-group-item"><a href="#" class="text-indigo-500">Chemistry</a></li>
+                            <!-- Add more subjects as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more year folders as needed -->
+
+        </div>
+    </div>
+
+    <!-- Font Awesome for the down arrow icon -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to filter subjects based on search input
+        function filterSubjects(year, searchValue) {
+            const subjectsList = document.getElementById(`subjects${year}`);
+            const subjects = subjectsList.getElementsByTagName('li');
+            
+            for (let i = 0; i < subjects.length; i++) {
+                const subject = subjects[i].getElementsByTagName('a')[0];
+                const subjectName = subject.innerText.toLowerCase();
+                if (subjectName.includes(searchValue.toLowerCase())) {
+                    subjects[i].style.display = 'block';
+                } else {
+                    subjects[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+
